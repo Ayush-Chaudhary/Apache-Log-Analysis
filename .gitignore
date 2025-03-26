@@ -1,0 +1,15 @@
+# Log files
+*.log
+
+# Analysis output files
+*_analysis.txt
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment files
+.env
+venv/
+env/ 
