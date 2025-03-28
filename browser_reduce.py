@@ -42,8 +42,11 @@ for line in sys.stdin:
 if current_browser == browser:
     output_lines.append(f"{current_browser}\t{current_count}")
 
+# Sort the output lines by count in descending order
+sorted_output = sorted(output_lines, key=lambda x: int(x.split('\t')[1]), reverse=True)
+
 # Print results to stdout
-for line in output_lines:
+for line in sorted_output:
     print(line)
 
 # Save results to file
@@ -52,5 +55,5 @@ with open('browser_analysis.txt', 'w') as f:
     f.write("============================\n\n")
     f.write("Browser\tCount\n")
     f.write("-------\t-----\n")
-    for line in output_lines:
+    for line in sorted_output:
         f.write(line + '\n') 

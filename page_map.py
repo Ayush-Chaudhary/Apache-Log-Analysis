@@ -8,10 +8,8 @@ import re
 for line in sys.stdin:
     # remove leading and trailing whitespace
     line = line.strip()
+
+    words = line.split()
     
-    # Use regex to find the GET request and extract the path
-    match = re.search(r'GET\s+([^\s]+)', line)
-    if match:
-        path = match.group(1)
-        # Output path with count 1
-        print('%s\t%s' % (path, 1)) 
+    link = words[6]
+    print('%s\t%s' % (link, 1)) 
